@@ -1,0 +1,61 @@
+@media (max-width: 768px) {
+    .navIcons {
+        display: none; /* Hide nav links by default */
+        flex-direction: column; /* Stack them vertically */
+        position: absolute; /* Position the dropdown */
+        background-color: #040303; /* Background color */
+        top: 60px; /* Position below the navbar */
+        height: 100vh;
+        font-size: 25px;
+        right: 0; /* Align to the right */
+        width: 100%; /* Full width */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow */
+    }
+
+    .navIcons.active {
+        display: flex; /* Show when active */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon on small screens */
+    }
+
+    /* style for search container */
+    #search-container input {
+        width: 60%;
+        border: 1px solid #110f29;
+        padding: 0.5em 0.1em;
+    }
+    #search-container{
+        border-bottom-color:none;
+    }
+
+    /* style for body */
+    .card{
+        width: 11em;
+    }
+    img{
+        height: 100%;
+    }
+    /* #search-container button{
+        padding: 0.6em 1.3em;
+        margin-left: 1em;
+        background-color: #f3d0ed;
+        color: #fff;
+        border-radius: 5px;
+        margin-top: 0.5em;
+        border-bottom: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    } */
+    /*  */
+    #products{
+        display: grid;
+        grid-template-columns:  auto auto;
+        grid-column-gap: 1em;
+        padding: 2em 0;
+    }
+
+
+}

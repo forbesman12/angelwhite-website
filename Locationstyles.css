@@ -1,0 +1,238 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  
+
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Changed to space-between for better responsiveness */
+    padding: 16px;
+    background-color: #fde1ff;
+    box-shadow: 0 1px 3px -2px black;
+    position: fixed;
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Ensure it starts from the left */
+    right: 0; /* Ensure it stretches to the right */
+    z-index: 1000;
+}
+.nav-logo{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.nav-logo p {
+    color: #171717;
+    font-size: 13px;
+    font-weight: 600;
+}
+.nav-logo img {
+    width: 50px;
+}
+
+.navIcons {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.navIcons a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+  /* Header */
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #4a4a4a;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Container for Store Section */
+  .store-location {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Image Gallery */
+  .image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .location-image {
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .location-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  footer {
+    background-color: #fde1ff; /* Dark background */
+    color: rgb(0, 0, 0); /* White text */
+    padding: 20px; /* Padding around the footer */
+    text-align: center; /* Center text */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 17px; /* Font size for copyright text */
+    padding-bottom: 10px;
+}
+
+footer ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+footer ul li {
+    margin: 10px 0; /* Margin for spacing */
+    position: relative; /* Position for dropdown */
+}
+
+footer ul li a {
+    color: rgb(0, 0, 0); /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 19px; /* Font size for links */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between text and arrow */
+    align-items: center; /* Center items vertically */
+    padding-bottom: px;
+}
+
+footer ul li a .arrow {
+    margin-left: 5px; /* Space between text and arrow */
+    transition: transform 0.3s; /* Smooth transition for arrow */
+}
+
+footer ul li.active a .arrow {
+    transform: rotate(90deg); /* Rotate arrow when active */
+}
+
+footer ul .dropdown {
+    display: none; /* Hide dropdown by default */
+    background-color: #fde1ff; /* Darker background for dropdown */
+    padding: 10px; /* Padding for dropdown */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 5px; /* Space above dropdown */
+}
+
+footer ul li.active .dropdown {
+    display: block; /* Show dropdown when active */
+}
+
+footer ul .dropdown li {
+    margin: 5px 0; /* Margin for spacing */
+}
+
+footer ul .dropdown li a {
+    color: #000; /* Link color in dropdown */
+    font-size: 17px; /* Font size for dropdown links */
+    padding-bottom: 5px;
+}
+
+footer ul .dropdown li a:hover {
+    text-decoration: underline; /* Underline on hover for dropdown links */
+}
+
+
+
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .navIcons {
+      display: none; /* Hide nav links by default */
+      flex-direction: column; /* Stack them vertically */
+      position: absolute; /* Position the dropdown */
+      background-color: #333; /* Background color */
+      top: 60px; /* Position below the navbar */
+      right: 0; /* Align to the right */
+      width: 100%; /* Full width */
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow */
+  }
+
+  .navIcons.active {
+      display: flex; /* Show when active */
+  }
+
+  .hamburger {
+      display: block; /* Show hamburger icon on small screens */
+  }
+
+    .image-gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .location-image {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+  
+    iframe {
+      height: 300px;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    .store-location {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px;
+    }
+  
+    button {
+      padding: 12px 25px;
+      font-size: 14px;
+    }
+  
+    iframe {
+      height: 250px;
+    }
+  }
+  

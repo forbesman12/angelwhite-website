@@ -1,0 +1,236 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins';
+ }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 10px;
+    padding-inline: 2px;
+    box-shadow: 0 1px 3px -2px black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff; /* Added background color for visibility */
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo p {
+    color: #171717;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nav-logo img {
+    width: 50px;
+}
+
+.navIcons {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.navIcons a {
+    text-decoration: none;
+    color: rgb(244, 244, 244); /* Changed to black for better visibility */
+    padding: 8px 16px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#search-container {
+    margin: 2em 0; /* Adjusted margin */
+    /* border: 2px solid red; */
+}
+
+#search-container input {
+    background-color: transparent;
+    width: 40%;
+    border-bottom: 2px solid #110f29;
+    padding: 0.6em 0.3em;
+}
+
+#search-container button {
+    padding: 0.6em 1.3em;
+    margin-left: 1em;
+    background-color: #f3d0ed;
+    color: #fff;
+    border-radius: 5px;
+    border: none; /* Removed unnecessary borders */
+}
+
+#buttons button {
+    border: 2px solid #f3d0ed;
+    padding: 0.5em 1.2em;
+    border-radius: 3em;
+    background-color: transparent;
+    font-size: 12px;
+    color: rgb(12, 12, 12);
+    cursor: pointer;
+}
+
+#buttons button:hover {
+    color: red;
+}
+
+.active {
+    background-color: rgb(250, 15, 55);
+}
+
+#products {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 1.5em;
+    padding: 2em 0;
+}
+
+.card {
+    background-color: #fff;
+    width: 25em;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+}
+
+.image-container {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.container {
+    padding-top: 1em;
+    color: #110f29;
+}
+
+.container h5 {
+    font-weight: 600;
+}
+
+.hide {
+    display: none;
+}
+
+#pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pagination-button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.966);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination-button:hover {
+    background-color: #e014c5a6;
+}
+
+footer {
+    background-color: #fde1ff;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+footer ul li {
+    margin: 10px 0;
+    position: relative;
+}
+
+footer ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer ul li a .arrow {
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+footer ul li.active a .arrow {
+    transform: rotate(90deg);
+}
+
+footer ul .dropdown {
+    display: none;
+    background-color: #fde1ff;
+    padding: 10px;
+    border-radius: 5px; 
+    margin-top: 5px;
+}
+
+footer ul li.active .dropdown {
+    display: block;
+}
+
+footer ul .dropdown li {
+    margin: 5px 0;
+}
+
+footer ul .dropdown li a {
+    color: #000;
+    font-size: 17px;
+    padding-bottom: 5px;
+}
+
+footer ul .dropdown li a:hover {
+    text-decoration: underline;
+}

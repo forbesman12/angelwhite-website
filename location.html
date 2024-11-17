@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Store Location</title>
+  <link rel="stylesheet" href="Locationstyles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="nav-logo">
+        <img src="./assests2/logo.png" alt="Logo">
+        <p>ANGEL WHITE DISPOSABLES</p>
+    </div>
+    <div class="cart-icon" id="cart-icon">
+        <i class="fas fa-shopping-cart fa-2x"></i> <!-- 2x larger icon -->
+        <span id="cart-count" style="display: none;">0</span> <!-- Hidden by default -->
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        &#9776; <!-- Hamburger icon -->
+    </div>
+    <div class="navIcons" id="navIcons">
+        <a href="./index.html">Home</a>
+        <a href="">Plates</a>
+        <a href="">Bowls</a>
+        <a href="">Cups</a>
+        <a href="">Containers</a>
+        <a href="">Paper</a>
+    </div>
+    
+</div>
+
+
+  <h1>Find Our Store</h1>
+  <div class="store-location">
+    <h2>STORE LOCATION</h2>
+    <div class="image-gallery">
+      <div class="image1">
+        <img src="./assests2/2nd-Niger-bridge1.jpg" alt="Store Front" class="location-image">
+        <h2>Onitsha</h2>
+        <p>Shop 2, Mainline Ogboefere Market, Onitsha <br>
+        Anambra State</p>
+        </div>
+        <div class="image2">
+        <img src="./assests2/Asaba-Airport.jpg" alt="Inside Store" class="location-image">
+        <h2>Asaba</h2>
+        <p>No 5, Omamufo Street, Vanguard Road,Opp Airport <br>Asaba, 
+          Delta State</p>
+        </div>
+      </div>
+
+  </div>
+          <div class="subscribebox">
+            <h2>SUBSCRIBE TO OUR EMAIL SERVICES</h2>
+            <p>Join to get special offers, free giveaways, and once-in-a-lifetime deals</p>
+            <form id="subscribeForm">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="responseMessage"></p>
+          </div>
+</body>
+
+<section aria-label="Subscribe for Updates">
+    <div class="container">
+      <article>
+        <hgroup>
+          <h2>Subscribe for Updates</h2>
+          <h3>Get notifications on new products and offers directly to your inbox.</h3>
+        </hgroup>
+        <form class="grid" id="subscribeForm">
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            placeholder="Your First Name"
+            aria-label="Your First Name"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email Address"
+            aria-label="Your Email Address"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </article>
+    </div>
+  </section>
+  
+<footer>
+  <p>&copy; 2024 Angelwhite Disposables.</p>
+  <ul>
+      <li>
+          <a href="javascript:void(0);" class="toggle-dropdown" aria-haspopup="true">
+              About Us <span class="arrow"> &gt;</span>
+          </a>
+          <ul class="dropdown">
+              <li><a href="./Angelwhite.html">Angelwhite</a></li>
+              <li><a href="./location.html">Store Location</a></li>
+          </ul>
+      </li>
+      <li>
+          <a href="javascript:void(0);" class="toggle-dropdown" aria-haspopup="true">
+              Our Policies <span class="arrow"> &gt;</span>
+          </a>
+          <ul class="dropdown">
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Return Policy</a></li>
+              <li><a href="#">Exchange Policy</a></li>
+          </ul>
+      </li>
+      <li>
+          <a href="javascript:void(0);" class="toggle-dropdown" aria-haspopup="true">
+              Need help? <span class="arrow"> &gt;</span>
+          </a>
+          <ul class="dropdown">
+              <li><a href="#">Contact Us</a></li>
+          </ul>
+      </li>
+  </ul>
+</footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+    const navIcons = document.getElementById('navIcons');
+    navIcons.classList.toggle('active'); // Toggle the active class
+});
+
+document.querySelectorAll('.toggle-dropdown').forEach(item => {
+    item.addEventListener('click', function() {
+        // Toggle the active class on the parent <li>
+        const parentLi = this.parentElement;
+        parentLi.classList.toggle('active');
+
+        // Toggle the dropdown visibility
+        const dropdown = parentLi.querySelector('.dropdown');
+        if (dropdown) {
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    });
+});
+//   email
+// JavaScript to handle form submission and send data to the backend
+document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Collect form data
+    const firstname = document.getElementById('firstname').value;
+    const email = document.getElementById('email').value;
+
+    // Send data to the backend using fetch
+    fetch('/subscribe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ firstname, email })
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('Subscription successful. Thank you!');
+      } else {
+        alert('Failed to subscribe. Please try again later.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
+    });
+  });
+
+  </script>
+</html>
+<!-- // email submission
+    document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const email = document.getElementById('email').value;
+
+        // Send the email to your backend
+        fetch('https://your-backend-url.com/subscribe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('responseMessage').innerText = data.message; // Show success message
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('responseMessage').innerText = 'There was an error. Please try again.';
+        });
+    }); -->

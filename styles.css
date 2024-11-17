@@ -1,0 +1,385 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-family: sans-serif;
+}
+
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'poppins';
+  }
+
+  .navbar {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between; /* Changed to space-between for better responsiveness */
+    box-shadow: 0 1px 3px -2px black;
+    background-color: #fff;
+    position: fixed;
+    top: 0; /* Position it at the top of the viewport */
+    left: 0; /* Ensure it starts from the left */
+    right: 0; /* Ensure it stretches to the right */
+    z-index: 1000;
+}
+
+.nav-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-logo p {
+    color: #171717;
+    font-size: 15px;
+    font-weight: 600;
+}
+.nav-logo img {
+    width: 50px;
+}
+
+.navIcons {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.navIcons a {
+    text-decoration: none;
+    color: #171717; /* Change this to a darker color for visibility */
+    padding: 8px 16px;
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* second Styles */
+.hero{
+    height: 90vh;
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+    display: flex;
+    padding-top: 20px;
+}
+.hero-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 180px;
+    line-height: 1.1;
+}
+.hero-left h2{
+    color: #090909;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.hero-left p{
+    color: #171717;
+    font-weight: 700;
+    font-size: 85px;
+}
+
+.hero-hand-icon{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.hero-hand-icon img{
+    width: 80px;
+}
+.hero-latest-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 310px;
+    height: 70px;
+    border-radius: 75px;
+    margin-top: 30px;
+    background: red;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+} 
+.hero-latest-btn a{
+    color: #fff;
+    text-decoration: none;
+}
+.hero-right{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-right img{
+    width: 800px;
+}
+
+
+.popular{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    gap: 10px;
+    /* height: 75vh; */
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+}
+.popular h1{
+    color: #171717;
+    font-size: 40px;
+    font-weight: 600;
+}
+.popular hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+.catalog {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.product-item:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}
+
+.product-item img {
+    width: 100%; /* Make the image take the full width of the container */
+    height: 350px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 5px; /* Optional: to keep the same border radius */
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.product-item h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.price-container {
+    display: flex; /* Use flexbox for the price container */
+    justify-content: center; /* Center the prices */
+    align-items: center; /* Align items vertically */
+}
+
+.price {
+    font-weight: bold;
+    margin-right: 10px; /* Space between new and old price */
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #878797;
+}
+/* style for sec three */
+.secThree{
+    padding: 90px;
+    background-color:  #fde1ff;
+}
+.collection{
+    height: 60vh;
+    border: 2px solid;
+    display: flex;
+    justify-content: space-between;
+}
+.collect{
+    width: 505px;
+    border: 2px solid;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./assests2/brownpouch.png);
+    background-color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./assests2/disposable.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.right{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./assests2/plates.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.collect>h3{
+    color: #000;
+    font-size: 30px;
+}
+
+.sectionFour {
+    padding-top: 50px;
+    padding-inline: 50px;
+    height: auto; /* Adjusted to make it responsive */
+}
+
+.instaphoto-slider {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scroll */
+    scroll-snap-type: x mandatory; /* Snap effect for smooth scrolling */
+    gap: 20px; /* Space between images */
+}
+
+.insta1 {
+    flex: 0 0 auto; /* Ensure images don't shrink and keep their width */
+    width: 300px; /* You can adjust the width of each image container */
+    position: relative;
+    overflow: hidden; /* Ensures the image stays within the container */
+}
+
+.insta1 > img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    object-fit: cover; /* Makes images cover the space nicely */
+}
+
+.insta1:hover img {
+    transform: scale(1.05); /* Image zoom effect */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.6s;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+.overlay img.instagram-logo {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.insta1:hover .overlay {
+    opacity: 1;
+}
+
+.overlay p {
+    margin: 0;
+    font-weight: bold;
+}
+/*  */
+footer {
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);; /* Dark background */
+    color: rgb(0, 0, 0); /* White text */
+    /* padding: 20px; Padding around the footer */
+    text-align: center; /* Center text */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 17px; /* Font size for copyright text */
+    padding-bottom: 10px;
+}
+
+footer ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+footer ul li {
+    margin: 10px 0; /* Margin for spacing */
+    position: relative; /* Position for dropdown */
+}
+
+footer ul li a {
+    color: rgb(0, 0, 0); /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 19px; /* Font size for links */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between text and arrow */
+    align-items: center; /* Center items vertically */
+    padding-bottom: px;
+}
+
+footer ul li a .arrow {
+    margin-left: 5px; /* Space between text and arrow */
+    transition: transform 0.3s; /* Smooth transition for arrow */
+}
+
+footer ul li.active a .arrow {
+    transform: rotate(90deg); /* Rotate arrow when active */
+}
+
+footer ul .dropdown {
+    display: none; /* Hide dropdown by default */
+    background-color: #fde1ff; /* Darker background for dropdown */
+    padding: 10px; /* Padding for dropdown */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 5px; /* Space above dropdown */
+}
+
+footer ul li.active .dropdown {
+    display: block; /* Show dropdown when active */
+}
+
+footer ul .dropdown li {
+    margin: 5px 0; /* Margin for spacing */
+}
+
+footer ul .dropdown li a {
+    color: #000; /* Link color in dropdown */
+    font-size: 17px; /* Font size for dropdown links */
+    padding-bottom: 5px;
+}
+
+footer ul .dropdown li a:hover {
+    text-decoration: underline; /* Underline on hover for dropdown links */
+}

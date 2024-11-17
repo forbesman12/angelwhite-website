@@ -1,0 +1,99 @@
+/* Inline CSS to quickly design the cart page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f8f8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    padding-top: 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-details {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.cart-item-details h2 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.cart-item-details p {
+    font-size: 14px;
+    color: #555;
+    margin: 2px 0;
+}
+
+.cart-item-price {
+    font-size: 16px;
+    color: #000;
+    text-align: right;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item-quantity button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.cart-item-delete {
+    color: #d9534f;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#clear-cart-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: block;
+}
+
+.cart-footer {
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+    text-align: center;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelwhite stores</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-logo">
+            <img src="./assests2/logo.png" alt="Logo">
+            <p>ANGEL WHITE DISPOSABLES</p>
+        </div>
+        <div class="hamburger" id="hamburger">
+            &#9776; <!-- Hamburger icon -->
+        </div>
+        <div class="navIcons" id="navIcons">
+            <a href="./shop.html">Shop</a>
+            <a href="./shop.html">Plates</a>
+            <a href="./shop.html">Bowls</a>
+            <a href="./shop.html">Cups</a>
+            <a href="./shop.html">Containers</a>
+            <a href="./shop.html">Paper</a>
+        </div>
+        <div class="cart-icon" id="cart-icon" aria-label="Shopping Cart">
+            <a href="cart.html">
+                <i class="fas fa-shopping-cart fa-2x" style="color: black;"></i>
+                <span id="cart-count" style="display: none;">0</span>
+            </a>
+        </div>
+        
+    </div>
+
+    <div class='hero'>
+        <div class="hero-left">
+        <h2>NEW ARRIVALS ONLY</h2>
+        <div>
+            <div class="hero-hand-icon">
+                <p>new</p>
+                <img src="./assests2/waving-hand.png" alt="" />
+            </div>
+            <p>collections</p>
+            <p>for everyone</p>
+        </div>
+        <div class="hero-latest-btn">
+            <a href="./shop.html"><div>Latest Collection</div></a>
+            <FontAwesomeIcon icon={faArrowRight} />
+        </div>
+        </div>
+        <div class="hero-right">
+        <img src="./assests2/hero_img.png" alt="" />
+        </div>
+    </div>
+
+    <div class='popular'>
+        <h1>POPULAR</h1>
+        <hr />
+        <div class="catalog" id="catalog">
+        
+        </div>
+    </div>
+    <div class="secThree">
+        <div class="collection-slider">
+            <div class="collection"> 
+                <div class="collect left"><h3>Pouches</h3></div>
+                <div class="collect middle"><h3>Food Bowls</h3></div>
+                <div class="collect right"><h3>Paper Plate</h3></div>
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="slider-bar">
+            <span class="slider-dot" onclick="currentSlide(1)"></span>
+            <span class="slider-dot" onclick="currentSlide(2)"></span>
+            <span class="slider-dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+    
+    <div class="sectionFour">
+        <h2>Join Our Community</h2>
+        <div class="instaphoto-slider">
+            <div class="insta1">
+                <img src="./assests2/fries.jpg" alt="Fries">
+                <div class="overlay">
+                    <img class="instagram-logo" src="./assests2/logoimg-removebg-preview.png" alt="Instagram Logo">
+                    <p>Shop this product</p>
+                </div>
+            </div>
+            <div class="insta1">
+                <img src="./assests2/cup.jpg" alt="Cup">
+                <div class="overlay">
+                    <img class="instagram-logo" src="./assests2/logoimg-removebg-preview.png" alt="Instagram Logo">
+                    <p>Shop this product</p>
+                </div>
+            </div>
+            <div class="insta1">
+                <img src="./assests2/foil.jpg" alt="Foil">
+                <div class="overlay">
+                    <img class="instagram-logo" src="./assests2/logoimg-removebg-preview.png" alt="Instagram Logo">
+                    <p>Shop this product</p>
+                </div>
+            </div>
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+    
+    
+<footer>
+    <p>&copy; 2024 Angelwhite Disposables.</p>
+    <ul>
+        <li>
+            <a href="javascript:void(0);" class="toggle-dropdown" aria-haspopup="true">
+                About Us <span class="arrow"> &gt;</span>
+            </a>
+            <ul class="dropdown">
+                <li><a href="./Angelwhite.html">Angelwhite</a></li>
+                <li><a href="./location.html">Store Location</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);" class="toggle-dropdown" aria-haspopup="true">
+                Our Policies <span class="arrow"> &gt;</span>
+            </a>
+            <ul class="dropdown">
+                <li><a href="#">Refund Policy</a></li>
+                <li><a href="#">Return Policy</a></li>
+                <li><a href="#">Exchange Policy</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0);" class="toggle-dropdown" aria-haspopup="true">
+                Need help? <span class="arrow"> &gt;</span>
+            </a>
+            <ul class="dropdown">
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </li>
+    </ul>
+    
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
