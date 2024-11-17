@@ -1,17 +1,24 @@
 @media (max-width: 768px) {
     .navIcons {
-        display: none; /* Hide nav links by default */
-        flex-direction: column; /* Stack them vertically */
-        position: absolute; /* Position the dropdown */
-        background-color: #333; /* Background color */
-        top: 60px; /* Position below the navbar */
-        right: 0; /* Align to the right */
-        width: 100%; /* Full width */
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow */
+        display: none; /* Hidden by default */
+        position: fixed; /* Fix the position to cover the screen */
+        top: 0; /* Position at the top */
+        right: -100%; /* Initially hide the nav off-screen */
+        width: 100vw; /* Full screen width */
+        height: 130vh; /* Full screen height */
+        background-color: #333; /* Dark background */
+        flex-direction: column; /* Stack links vertically */
+        align-items: start;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        transition: right 3s ease-in-out; /* Sliding transition */
+    }
+    .navIcons a{
+        color: #fff;
     }
 
     .navIcons.active {
         display: flex; /* Show when active */
+        right: 0; 
     }
 
     .hamburger {
@@ -48,7 +55,7 @@
     }
     /*  *//*  */
     .popular{
-        height: 60vh;
+        height: 210vh;
     }
     .popular h1{
     font-size: medium;
@@ -65,13 +72,11 @@
     .product-item img{
         height: 250px;
     }
-
-    /* .catalog{
-        overflow-x: auto; 
-        overflow-y: hidden;
-    } */
-
-   /* secThree */
+    .catalog{
+        flex-direction: column;
+    }
+    
+/* secThree */
    .secThree {
     padding: 10px;
 }

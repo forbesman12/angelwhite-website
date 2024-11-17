@@ -56,7 +56,7 @@ body {
 
 .navIcons a {
     text-decoration: none;
-    color: rgb(244, 244, 244); /* Changed to black for better visibility */
+    color: rgb(0, 0, 0); /* Changed to black for better visibility */
     padding: 8px 16px;
 }
 
@@ -70,7 +70,9 @@ body {
     width: 95%;
     margin: 0 auto;
 }
-
+.close-btn{
+    display: none;
+}
 #search-container {
     margin: 2em 0; /* Adjusted margin */
     /* border: 2px solid red; */
@@ -102,7 +104,7 @@ body {
     cursor: pointer;
 }
 
-#buttons button:hover {
+#buttons>button:hover {
     color: red;
 }
 
@@ -114,7 +116,7 @@ body {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 1.5em;
-    padding: 2em 0;
+    padding-left: 60px;
 }
 
 .card {
@@ -131,7 +133,7 @@ body {
 }
 
 img {
-    max-width: 100%;
+    width: 80%;
     object-fit: contain;
 }
 
@@ -168,69 +170,33 @@ img {
 }
 
 footer {
-    background-color: #fde1ff;
-    color: rgb(0, 0, 0);
-    padding: 20px;
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);; /* Dark background */
+    color: rgb(0, 0, 0); /* White text */
+    padding-inline: 70px;
+    padding-block: 20px;
+    /* padding: 20px; Padding around the footer */
+}
+.about{
+    margin-top: 30px;
+}
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 17px; 
+    padding-bottom: 0px;/* Font size for copyright text */
     text-align: center;
 }
-
-footer p {
-    margin: 0;
-    font-size: 17px;
-    padding-bottom: 10px;
-}
-
-footer ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-}
-
-footer ul li {
-    margin: 10px 0;
-    position: relative;
-}
-
-footer ul li a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 19px;
+.footer-details{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
-
-footer ul li a .arrow {
-    margin-left: 5px;
-    transition: transform 0.3s;
+.footer-details img{
+    width: 28px;
 }
-
-footer ul li.active a .arrow {
-    transform: rotate(90deg);
-}
-
-footer ul .dropdown {
-    display: none;
-    background-color: #fde1ff;
-    padding: 10px;
-    border-radius: 5px; 
-    margin-top: 5px;
-}
-
-footer ul li.active .dropdown {
-    display: block;
-}
-
-footer ul .dropdown li {
-    margin: 5px 0;
-}
-
-footer ul .dropdown li a {
-    color: #000;
-    font-size: 17px;
-    padding-bottom: 5px;
-}
-
-footer ul .dropdown li a:hover {
-    text-decoration: underline;
+.ddd{
+    width: 9%;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #e764d1;
+    margin-bottom: 15px;
 }

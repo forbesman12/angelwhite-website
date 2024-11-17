@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to render cart items in the HTML
     function renderCart() {
+        cartItemsContainer.innerHTML = ''; // Clear current cart items
         if (cart.length > 0) {
-            cartItemsContainer.innerHTML = '';
             cart.forEach((item, index) => {
                 const itemElement = document.createElement("div");
                 itemElement.classList.add("cart-item");
@@ -32,7 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function updateCartIcon() {
-        const cartCountElement = document.getElementById("cart-count");
+        const cartCountElement = document.getElementById("cart-count"); // Make sure this ID matches your HTML
+        if (!cartCountElement) {
+            console.error("Element with ID 'cart-count' not found!");
+            return; // Exit the function if the element is not found
+        }
         const cartCount = cart.length;
         cartCountElement.innerText = cartCount > 0 ? cartCount : '0';
         cartCountElement.style.display = cartCount > 0 ? 'inline' : 'none';
@@ -46,21 +50,13 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             message += "(No items in the cart)"; // Fallback message if cart is empty
         }
-    
-        // Debug: Log the message to see if it's correctly constructed
-        console.log("WhatsApp Message:", message);
+        console.log("Generated WhatsApp Message: ", message); // Debugging message
     
         // Update the href of the checkout button with the WhatsApp link
         const whatsappNumber = "2349067493752"; // Your WhatsApp number
         const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-        
-        // Debug: Log the WhatsApp link to verify it's correct
-        console.log("WhatsApp Link:", whatsappLink);
-    
-        // Update the checkout button
         document.getElementById("checkout-button").href = whatsappLink;
     }
-    
 
     // Function to decrease quantity
     window.decreaseQuantity = function(index) {
@@ -86,6 +82,16 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("cart", JSON.stringify(cart));
         renderCart(); // Re-render the cart and update the WhatsApp link
     };
+
+    // Function to clear the cart
+    function clearCart() {
+        cart = []; // Empty the cart array
+        localStorage.removeItem("cart"); // Remove cart from localStorage
+        renderCart(); // Re-render the cart to reflect the changes
+    }
+
+    // Attach the clear cart function to the button
+    document.getElementById("clear-cart-button").addEventListener("click", clearCart);
 
     // Call this function to render the cart items and update the WhatsApp link on page load
     renderCart();

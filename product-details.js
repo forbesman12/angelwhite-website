@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (productDetails) {
         // Populate product details
         document.getElementById("product-name").innerText = productDetails.productName;
-        document.getElementById("product-price").innerText = "$" + productDetails.price;
+        document.getElementById("product-price").innerText = "N" + productDetails.price;
         document.getElementById("main-image").setAttribute("src", productDetails.image);
 
         // Display additional images

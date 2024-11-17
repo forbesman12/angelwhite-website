@@ -1,4 +1,3 @@
-
 const data_product = [
     {
         id: 1,
@@ -38,13 +37,17 @@ if (catalog) {
     data_product.forEach(product => {
         const productItem = document.createElement('div');
         productItem.className = 'product-item';
+
+        // Use an anchor tag to wrap the product image and name
         productItem.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
+            <a href="shop.html?id=${product.id}" class="product-link">
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+            </a>
             <div class="price-container">
-            <p class="price">$${product.new_price.toFixed(2)}</p>
-            <p class="old-price">$${product.old_price.toFixed(2)}</p>
-            <div class="price-container">
+                <p class="price">N${product.new_price.toFixed(2)}</p>
+                <p class="old-price">N${product.old_price.toFixed(2)}</p>
+            </div>
         `;
         catalog.appendChild(productItem);
     });
@@ -53,10 +56,18 @@ if (catalog) {
 }
 
 
+// Event listener for the hamburger icon
 document.getElementById('hamburger').addEventListener('click', function() {
     const navIcons = document.getElementById('navIcons');
     navIcons.classList.toggle('active'); // Toggle the active class
 });
+
+// Event listener for the close button
+document.getElementById('closeBtn').addEventListener('click', function() {
+    const navIcons = document.getElementById('navIcons');
+    navIcons.classList.remove('active'); // Remove the active class to slide it out
+});
+
 
 // footer
 document.querySelectorAll('.toggle-dropdown').forEach(item => {
@@ -152,3 +163,7 @@ function addToCart(productDetails) {
 document.addEventListener("DOMContentLoaded", function() {
     updateCartIcon(); // Call this to ensure the cart count is displayed
 });
+function goToShop(filter) {
+    // Redirect to the shop page with the filter as a query parameter
+    window.location.href = `shop.html?filter=${encodeURIComponent(filter)}`;
+}

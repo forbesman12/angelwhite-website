@@ -18,12 +18,15 @@
             &#9776; <!-- Hamburger icon -->
         </div>
         <div class="navIcons" id="navIcons">
+            <div id="closeBtn" class="close-btn">X</div>
+    <!-- Your navigation links here -->
             <a href="./shop.html">Shop</a>
-            <a href="./shop.html">Plates</a>
-            <a href="./shop.html">Bowls</a>
-            <a href="./shop.html">Cups</a>
-            <a href="./shop.html">Containers</a>
-            <a href="./shop.html">Paper</a>
+            <div class="lines"></div>
+            <a href="./shop.html">Plates</a><div class="lines"></div>
+            <a href="./shop.html">Bowls</a><div class="lines"></div>
+            <a href="./shop.html">Cups</a><div class="lines"></div>
+            <a href="./shop.html">Containers</a><div class="lines"></div>
+            <a href="./shop.html">Paper</a><div class="lines"></div>
         </div>
         <div class="cart-icon" id="cart-icon" aria-label="Shopping Cart">
             <a href="cart.html">
@@ -46,7 +49,7 @@
             <p>for everyone</p>
         </div>
         <div class="hero-latest-btn">
-            <a href="./shop.html"><div>Latest Collection</div></a>
+            <a href="./shop.html"><div>Shop Now</div></a>
             <FontAwesomeIcon icon={faArrowRight} />
         </div>
         </div>
@@ -58,17 +61,20 @@
     <div class='popular'>
         <h1>POPULAR</h1>
         <hr />
+        <div class="cata">
         <div class="catalog" id="catalog">
         
+        </div>
         </div>
     </div>
     <div class="secThree">
         <div class="collection-slider">
             <div class="collection"> 
-                <div class="collect left"><h3>Pouches</h3></div>
-                <div class="collect middle"><h3>Food Bowls</h3></div>
-                <div class="collect right"><h3>Paper Plate</h3></div>
+                <div class="collect left" onclick="goToShop('Pouch')"><h3>Pouches</h3></div>
+                <div class="collect middle" onclick="goToShop('Bowls')"><h3>Food Bowls</h3></div>
+                <div class="collect right" onclick="goToShop('Paper')"><h3>Paper Plate</h3></div>
             </div>
+            
         </div>
         <!-- Slider indicators -->
         <div class="slider-bar">
@@ -82,25 +88,31 @@
         <h2>Join Our Community</h2>
         <div class="instaphoto-slider">
             <div class="insta1">
-                <img src="./assests2/fries.jpg" alt="Fries">
-                <div class="overlay">
-                    <img class="instagram-logo" src="./assests2/logoimg-removebg-preview.png" alt="Instagram Logo">
-                    <p>Shop this product</p>
-                </div>
+                <a href="https://www.instagram.com/p/DCbEsvmozfW/" target="_blank">
+                    <img src="./assests2/fries.jpg" alt="Fries">
+                    <div class="overlay">
+                        <img class="instagram-logo" src="./assests2/logoimg-removebg-preview.png" alt="Instagram Logo">
+                        <p>Shop this product</p>
+                    </div>
+                </a>
             </div>
             <div class="insta1">
-                <img src="./assests2/cup.jpg" alt="Cup">
-                <div class="overlay">
-                    <img class="instagram-logo" src="./assests2/logoimg-removebg-preview.png" alt="Instagram Logo">
-                    <p>Shop this product</p>
-                </div>
+                <a href="https://www.instagram.com/p/DCbDA2pICXc/" target="_blank">
+                    <img src="./assests2/cup.jpg" alt="Cup">
+                    <div class="overlay">
+                        <img class="instagram-logo" src="./assests2/logoimg-removebg-preview.png" alt="Instagram Logo">
+                        <p>Shop this product</p>
+                    </div>
+                </a>
             </div>
             <div class="insta1">
-                <img src="./assests2/foil.jpg" alt="Foil">
-                <div class="overlay">
-                    <img class="instagram-logo" src="./assests2/logoimg-removebg-preview.png" alt="Instagram Logo">
-                    <p>Shop this product</p>
-                </div>
+                <a href="https://www.instagram.com/p/DCb6XYUo_E4/ target="_blank">
+                    <img src="./assests2/foil.jpg" alt="Foil">
+                    <div class="overlay">
+                        <img class="instagram-logo" src="./assests2/logoimg-removebg-preview.png" alt="Instagram Logo">
+                        <p>Shop this product</p>
+                    </div>
+                </a>
             </div>
             <!-- Add more images as needed -->
         </div>
@@ -109,35 +121,14 @@
     
 <footer>
     <p>&copy; 2024 Angelwhite Disposables.</p>
-    <ul>
-        <li>
-            <a href="javascript:void(0);" class="toggle-dropdown" aria-haspopup="true">
-                About Us <span class="arrow"> &gt;</span>
-            </a>
-            <ul class="dropdown">
-                <li><a href="./Angelwhite.html">Angelwhite</a></li>
-                <li><a href="./location.html">Store Location</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:void(0);" class="toggle-dropdown" aria-haspopup="true">
-                Our Policies <span class="arrow"> &gt;</span>
-            </a>
-            <ul class="dropdown">
-                <li><a href="#">Refund Policy</a></li>
-                <li><a href="#">Return Policy</a></li>
-                <li><a href="#">Exchange Policy</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:void(0);" class="toggle-dropdown" aria-haspopup="true">
-                Need help? <span class="arrow"> &gt;</span>
-            </a>
-            <ul class="dropdown">
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </li>
-    </ul>
+    <div class="footer-details">
+        <div class="about">
+            <h3>About us</h3>
+            <a href="./location.html">Location</a>
+        </div>
+        <a href="https://www.instagram.com/angelwhiteluxuryfoodpackaging/" target="_blank"><img src="./assests2/instagram.png" alt=""></a>
+        <a href=""><img src="./assests2/download__1_-removebg-preview (3).png" alt=""></a>
+    </div>
     
 </footer>
 <script src="script.js"></script>

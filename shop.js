@@ -2,6 +2,11 @@ document.getElementById('hamburger').addEventListener('click', function() {
     const navIcons = document.getElementById('navIcons');
     navIcons.classList.toggle('active'); // Toggle the active class
 });
+// Event listener for the close button
+document.getElementById('closeBtn').addEventListener('click', function() {
+    const navIcons = document.getElementById('navIcons');
+    navIcons.classList.remove('active'); // Remove the active class to slide it out
+});
 
 let products = {
     data: [
@@ -9,9 +14,9 @@ let products = {
             item: "1",
             productName: "Brown Paper Bag",
             category: "Paper",
-            price: "30",
+            price: "6500",
             image: "./assests/paper.png",
-            description:"A sturdy brown paper bag, perfect for carrying groceries or gifts.",
+            description: "A sturdy brown paper bag, perfect for carrying groceries or gifts.",
             additionalImages: ["./assests/paper1.jpg", "./assests/paper2.png", "./assests/paper2.png"] // Add more images as needed
         },
         {
@@ -64,7 +69,6 @@ let products = {
             image: "./assests/craftrecPlate.png"
         },
         {
-            
             item: "9",
             productName: "2ptn plastic Plate 50pcs",
             category: "Plates",
@@ -125,7 +129,7 @@ function displayProducts(productsToDisplay) {
 
         // Image tag
         let image = document.createElement("img");
-        image.setAttribute("src", product.image);
+        image.setAttribute ("src", product.image);
         image.setAttribute("alt", product.productName); // Add alt text for accessibility
         imgContainer.appendChild(image);
         card.appendChild(imgContainer);
@@ -142,7 +146,7 @@ function displayProducts(productsToDisplay) {
 
         // Price
         let price = document.createElement("h6");
-        price.innerText = "$" + product.price;
+        price.innerText = "N" + product.price;
         container.appendChild(price);
 
         card.appendChild(container);
@@ -163,7 +167,6 @@ function displayProducts(productsToDisplay) {
         });
     });
 }
-
 
 function filterProduct(value) {
     // Button class code
@@ -227,9 +230,22 @@ function filterProductsBySearch(searchValue) {
     updatePagination(filteredProducts.length);
 }
 
-// Initial display of products
-displayProducts(products.data);
-updatePagination(products.data.length);
+// Function to get query parameters from the URL
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Use the filter value
+window.onload = function() {
+    const filterValue = getQueryParam('filter');
+    if (filterValue) {
+        console.log("Filter value:", filterValue);
+        filterProduct(filterValue); // Call filterProduct to display filtered products
+    } else {
+        displayProducts(products.data); // Display all products if no filter is applied
+    }
+};
 
 // Function to update the cart icon
 function updateCartIcon() {
@@ -278,6 +294,7 @@ function addToCart(productDetails) {
 document.addEventListener("DOMContentLoaded", function() {
     updateCartIcon(); // Call this to ensure the cart count is displayed
 });
+
 // footer
 document.querySelectorAll('.toggle-dropdown').forEach(item => {
     item.addEventListener('click', function() {
