@@ -1,3 +1,5 @@
+import { products } from './image.js';
+
 document.getElementById('hamburger').addEventListener('click', function() {
     const navIcons = document.getElementById('navIcons');
     navIcons.classList.toggle('active'); // Toggle the active class
@@ -8,108 +10,17 @@ document.getElementById('closeBtn').addEventListener('click', function() {
     navIcons.classList.remove('active'); // Remove the active class to slide it out
 });
 
-let products = {
-    data: [
-        {
-            item: "1",
-            productName: "Brown Paper Bag",
-            category: "Paper",
-            price: "6500",
-            image: "./assests/paper.png",
-            description: "A sturdy brown paper bag, perfect for carrying groceries or gifts.",
-            additionalImages: ["./assests/paper1.jpg", "./assests/paper2.png", "./assests/paper2.png"] // Add more images as needed
-        },
-        {
-            item: "2",
-            productName: "Regular white T-shirt",
-            category: "Bowls",
-            price: "30",
-            image: "./assests/bowls.png"
-        },
-        {
-            item: "3",
-            productName: "Craft Bow Plate by 50pcs",
-            category: "Bowls",
-            price: "20,000",
-            image: "./assests/b1.png"
-        },
-        {
-            item: "4",
-            productName: "2ptn Box PaperPlate by 50pcs",
-            category: "Plates",
-            price: "30",
-            image: "./assests/p3.png"
-        },
-        {   
-            item: "5",
-            productName: "2ptn plastic Plate 50pcs",
-            category: "Plates",
-            price: "30",
-            image: "./assests/p2.png"
-        },
-        {
-            item: "6",
-            productName: "Big Paper Plate by by 100pcs",
-            category: "Plates",
-            price: "3500",
-            image: "./assests/Paperplate.png"
-        },
-        {
-            item: "7",
-            productName: "Noodles Pack by 50pcs",
-            category: "Paper",
-            price: "15,000",
-            image: "./assests/NoodlesPack.png"
-        },
-        {
-            item: "8",
-            productName: "Craft Rect Plate by 50pcs",
-            category: "Plate",
-            price: "20,000",
-            image: "./assests/craftrecPlate.png"
-        },
-        {
-            item: "9",
-            productName: "2ptn plastic Plate 50pcs",
-            category: "Plates",
-            price: "30",
-            image: "./assests/craftrecPlate.png"
-        },
-        {
-            item: "10",
-            productName: "Veggies Pack by 50pcs",
-            category: "Paper",
-            price: "18,000",
-            image: "./assests/envelopebox.png"
-        },
-        {
-            item: "11",
-            productName: "Frenchfries cup 50pcs",
-            category: "Paper",
-            price: "6800",
-            image: "./assests/pp1.png"
-        },
-        {
-            item: "12",
-            productName: " White foampack 50pcs",
-            category: "Plates",
-            price: "30",
-            image: "./assests/foampack.png"
-        },
-        {
-            item: "13",
-            productName: "Burger Pack 50pcs",
-            category: "Paper",
-            price: "30",
-            image: "./assests/burger.png"
-        },
-        // Add more products as needed
-    ],
-};
+
 
 let currentPage = 1; // Track the current page
-const itemsPerPage = 8; // Number of items to display per page
+let itemsPerPage = calculateItemsPerPage(); // Dynamically set based on screen size
 
+// Function to calculate items per page based on the screen size
+function calculateItemsPerPage() {
+    return window.innerWidth <= 768 ? 8 : 9; // 8 items for responsive view, 9 for normal
+}
+
+// Function to display products
 function displayProducts(productsToDisplay) {
     const productsContainer = document.getElementById("products");
     productsContainer.innerHTML = ''; // Clear existing products
@@ -119,48 +30,54 @@ function displayProducts(productsToDisplay) {
     const productsToShow = productsToDisplay.slice(startIndex, endIndex);
 
     productsToShow.forEach(product => {
-        // Create card
         let card = document.createElement("div");
         card.classList.add("card", product.category);
 
-        // Image div
         let imgContainer = document.createElement("div");
         imgContainer.classList.add("image-container");
 
-        // Image tag
         let image = document.createElement("img");
-        image.setAttribute ("src", product.image);
-        image.setAttribute("alt", product.productName); // Add alt text for accessibility
+        image.setAttribute("src", product.image);
+        image.setAttribute("alt", product.productName);
         imgContainer.appendChild(image);
         card.appendChild(imgContainer);
 
-        // Container
         let container = document.createElement("div");
         container.classList.add("container");
 
-        // Product name
         let name = document.createElement("h5");
         name.classList.add("product-name");
         name.innerText = product.productName.toUpperCase();
         container.appendChild(name);
 
-        // Price
-        let price = document.createElement("h6");
-        price.innerText = "N" + product.price;
-        container.appendChild(price);
+        // Handle default price display
+        let priceElement = document.createElement("h6");
+
+        if (typeof product.price === "object") {
+            // If the price is an object (size-based), pick the default size
+            const defaultSize = "small"; // Define your default size
+            const defaultPrice = product.price[defaultSize];
+            priceElement.innerText = `N${defaultPrice} (${defaultSize.charAt(0).toUpperCase() + defaultSize.slice(1)})`; // Display default size price
+        } else {
+            // For fixed price items
+            priceElement.innerText = `N${product.price}`;
+        }
+
+        container.appendChild(priceElement);
 
         card.appendChild(container);
         productsContainer.appendChild(card);
 
-        // NEW CODE: Add click event to redirect to product-details.html
-        card.addEventListener("click", function() {
+        // Add event listener to redirect to product details
+        card.addEventListener("click", function () {
             const productDetails = {
                 item: product.item,
                 productName: product.productName,
                 category: product.category,
-                price: product.price,
+                price: product.price, // Pass size-based pricing object if available
                 image: product.image,
-                additionalImages: product.additionalImages // Save additional images
+                additionalImages: product.additionalImages || [],
+                description: product.description || "No description available."
             };
             localStorage.setItem("selectedProduct", JSON.stringify(productDetails));
             window.location.href = "product-details.html";
@@ -168,73 +85,112 @@ function displayProducts(productsToDisplay) {
     });
 }
 
-function filterProduct(value) {
-    // Button class code
+// Assuming this is in your external JavaScript file
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.button-value');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterProduct(button.innerText); // Pass the button text to filterProduct
+        });
+    });
+});
+
+// Function to filter products
+window.filterProduct = function (value) {
+    console.log("Filtering for:", value); // Debugging statement
+
+    // Normalize the value to lowercase
+    const filterValue = value.toLowerCase();
+
     let buttons = document.querySelectorAll(".button-value");
-    buttons.forEach((button) => {
-        if (value.toUpperCase() == button.innerText.toUpperCase()) {
+    buttons.forEach(button => {
+        if (filterValue === button.innerText.toLowerCase()) {
             button.classList.add("active");
         } else {
             button.classList.remove("active");
         }
     });
 
-    // Filter products based on selected category
-    let filteredProducts = products.data.filter(product => {
-        return value === "all" || product.category.toLowerCase() === value.toLowerCase();
-    });
+    // If the filter value is "all", show all products
+    let filteredProducts = filterValue === "all"
+        ? products.data
+        : products.data.filter(product => product.category.toLowerCase() === filterValue);
 
-    // Reset to first page and display filtered products
-    currentPage = 1;
+    console.log("Filtered products:", filteredProducts); // Debugging statement
+
+    currentPage = 1; // Reset to first page
     displayProducts(filteredProducts);
     updatePagination(filteredProducts.length);
 }
 
+
+
+// Function to update pagination
 function updatePagination(totalItems) {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     const paginationContainer = document.getElementById("pagination");
     paginationContainer.innerHTML = '';
 
-    // Create pagination buttons
     for (let i = 1; i <= totalPages; i++) {
         const button = document.createElement("button");
         button.innerText = i;
         button.classList.add("pagination-button");
-        button.addEventListener("click", function() {
+        if (i === currentPage) button.classList.add("active"); // Highlight current page
+
+        button.addEventListener("click", function () {
             currentPage = i;
-            displayProducts(products.data); // Display products for the current page
+            displayProducts(products.data); // Display products for the selected page
         });
+
         paginationContainer.appendChild(button);
     }
 }
 
-// Capture the search input field
-const searchInput = document.getElementById("search-input");
-
-// Add an event listener for input changes
-searchInput.addEventListener("input", function() {
-    const searchValue = this.value.toLowerCase(); // Get the search value
-    filterProductsBySearch(searchValue); // Call the filter function with the search value
-});
-
-// Function to filter products based on search input
+// Function to handle search
 function filterProductsBySearch(searchValue) {
-    // Filter products based on the search value
     let filteredProducts = products.data.filter(product => {
-        return product.productName.toLowerCase().includes(searchValue); // Check if product name includes the search value
+        return product.productName.toLowerCase().includes(searchValue.toLowerCase());
     });
 
-    // Reset to first page and display filtered products
-    currentPage = 1;
+    currentPage = 1; // Reset to first page
     displayProducts(filteredProducts);
     updatePagination(filteredProducts.length);
 }
+
+// Set up event listeners on page load
+document.addEventListener("DOMContentLoaded", function () {
+    updateCartIcon(); // Update the cart icon
+
+    // Capture the search input field
+    const searchInput = document.getElementById("search-input");
+    searchInput.addEventListener("input", function () {
+        filterProductsBySearch(this.value);
+    });
+
+    // Check for filter query parameter
+    const filterValue = getQueryParam("filter");
+    if (filterValue) {
+        filterProduct(filterValue);
+    } else {
+        displayProducts(products.data);
+        updatePagination(products.data.length);
+    }
+
+    // Adjust items per page dynamically on resize
+    window.addEventListener("resize", function () {
+        itemsPerPage = calculateItemsPerPage(); // Recalculate items per page
+        displayProducts(products.data);
+        updatePagination(products.data.length);
+    });
+});
 
 // Function to get query parameters from the URL
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
+
 
 // Use the filter value
 window.onload = function() {

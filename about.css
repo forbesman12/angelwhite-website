@@ -1,3 +1,4 @@
+
 *,
 *::before,
 *::after {
@@ -23,7 +24,7 @@ body {
     padding-block: 10px;
     padding-inline: 2px;
     box-shadow: 0 1px 3px -2px black;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     right: 0;
@@ -44,7 +45,8 @@ body {
 }
 
 .nav-logo img {
-    width: 50px;
+    width: 60px;
+    height: 60px;
 }
 
 .navIcons {
@@ -71,111 +73,24 @@ body {
     margin: 0 auto;
 }
 .close-btn{
-    color: #fff;
-    /* border: 2px solid red; */
-    padding-block: 10px;
-    padding-inline: 20px;
-    font-size: 17px;
-    width: 100%;
-    text-align: end;
-    
-}
-#search-container {
-    margin: 2em 0; /* Adjusted margin */
-    /* border: 2px solid red; */
-}
-
-#search-container input {
-    background-color: transparent;
-    width: 40%;
-    border-bottom: 2px solid #110f29;
-    padding: 0.6em 0.3em;
-}
-
-#search-container button {
-    padding: 0.6em 1.3em;
-    margin-left: 1em;
-    background-color: #f3d0ed;
-    color: #fff;
-    border-radius: 5px;
-    border: none; /* Removed unnecessary borders */
-}
-
-#buttons button {
-    border: 2px solid #f3d0ed;
-    padding: 0.5em 1.2em;
-    border-radius: 3em;
-    background-color: transparent;
-    font-size: 12px;
-    color: rgb(12, 12, 12);
-    cursor: pointer;
-}
-
-#buttons>button:hover {
-    color: red;
-}
-
-.active {
-    background-color: rgb(250, 15, 55);
-}
-
-#products {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 1.5em;
-    padding-left: 60px;
-}
-
-.card {
-    background-color: #fff;
-    width: 25em;
-    margin-top: 1em;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
-}
-
-.image-container {
-    text-align: center;
-}
-
-img {
-    width: 80%;
-    object-fit: contain;
-}
-
-.container {
-    padding-top: 1em;
-    color: #110f29;
-}
-
-.container h5 {
-    font-weight: 600;
-}
-
-.hide {
     display: none;
 }
 
-#pagination {
-    margin: 20px 0;
+/* style for jumbotron */
+.jumbotron{
+    background-color: #f3d0ed;
+    padding: 10px;
     text-align: center;
 }
-
-.pagination-button {
-    margin: 0 5px;
-    padding: 10px 15px;
-    border: none;
-    background-color: #ffffff;
-    color: rgba(0, 0, 0, 0.966);
-    cursor: pointer;
-    border-radius: 5px;
+.AboutUssec{
+    padding: 15px;
+    text-align: justify;
 }
-
-.pagination-button:hover {
-    background-color: #e014c5a6;
+.Back{
+    text-align: center;
+    padding-bottom: 20px;
 }
-
+/* style for footer */
 footer{
     padding-top: 30px;
     padding-inline: 20px;
@@ -218,5 +133,6 @@ footer h3{
 }
 .social img{
     width: 30px;
+    height: 30px;
     gap: 10px;
 }
