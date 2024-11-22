@@ -17,7 +17,7 @@ let itemsPerPage = calculateItemsPerPage(); // Dynamically set based on screen s
 
 // Function to calculate items per page based on the screen size
 function calculateItemsPerPage() {
-    return window.innerWidth <= 768 ? 8 : 9; // 8 items for responsive view, 9 for normal
+    return window.innerWidth <= 768 ? 8 : 12; // 8 items for responsive view, 9 for normal
 }
 
 // Function to display products

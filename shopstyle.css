@@ -81,8 +81,7 @@ body {
     
 }
 #search-container {
-    margin: 2em 0; /* Adjusted margin */
-    /* border: 2px solid red; */
+    margin-bottom: 20px;
 }
 
 #search-container input {
@@ -120,15 +119,18 @@ body {
 }
 
 #products {
+    padding-inline: 20px;
+    max-width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-column-gap: 1.5em;
-    padding-left: 60px;
+    grid-row-gap: 1em;
 }
 
 .card {
-    background-color: #fff;
-    width: 25em;
+    background-color: #fff5f5;
+    width: 100%;
+    height: 380px;
     margin-top: 1em;
     padding: 1em;
     border-radius: 5px;
@@ -139,8 +141,9 @@ body {
     text-align: center;
 }
 
-img {
+.image-container img {
     width: 80%;
+    height: 280px;
     object-fit: contain;
 }
 

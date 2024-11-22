@@ -10,7 +10,7 @@ export const products = {
                 large: 10500
             },
             image: "./assests/paper.png",
-            description: "A sturdy brown paper bag, perfect for carrying groceries or gifts.",
+            description: "A sturdy brown paper bag, perfect for carrying groceries or gifts",
             additionalImages: ["./assests/paper1.jpg", "./assests/paper2.png"]
         },
         {

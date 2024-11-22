@@ -26,10 +26,11 @@
     }
 
     /*  */
-    .hero{
-        padding-top: 80px;
+    .hero {
+        height: auto; /* Allow dynamic height for smaller screens */
+        padding-inline: 10px;
+        padding-top: 90px; /* Adjust padding for mobile */
         flex-direction: column;
-        height: 90vh;
     }
     .hero-left{
         padding-top: 10px;
@@ -55,7 +56,7 @@
     }
     /*  *//*  */
     .popular{
-        height: 210vh;
+        padding-bottom: 10px;
     }
     .popular h1{
     font-size: medium;
